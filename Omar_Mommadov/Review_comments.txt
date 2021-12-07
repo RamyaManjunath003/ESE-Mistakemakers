@@ -1,0 +1,3 @@
+Overall, the points mentioned in your slides look good, but seem generic to medical use.
+But maybe you can pick one example like the hearing aid or Pacemaker and explain its specific characteristics.
+Also mention how Safety, Security and failure handling can be achieved.
