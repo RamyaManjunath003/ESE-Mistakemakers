@@ -1,4 +1,4 @@
-# Review and suggestions
+# Review
 
 I would recommend you to mention apart from the example you have given regarding distributed systems the specific characteristic as well, for example:
 - Heterogeneity
