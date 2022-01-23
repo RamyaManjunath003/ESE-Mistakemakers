@@ -7,7 +7,7 @@ char camera = 0;
 LiquidCrystal lcd(12,11,5,4,3,2);
 bool opened = false;
 bool pedestrian = false;
-bool lights = false;
+bool ligths = false;
 
 void setup() {
   pinMode(TRIGGER, OUTPUT);
@@ -34,13 +34,13 @@ void loop() {
     camera = Serial.read();       	// Read character
     switch(camera){
       case '0':
-      		lights = true;
+      		ligths = true;
       		break;
       case '1':
       		pedestrian = true;
       		break;
       case '2':
-      		lights = false;
+      		ligths = false;
       		break;
       case '3':
       		pedestrian = false;
@@ -49,37 +49,47 @@ void loop() {
   }
   
   if(pedestrian){	// DETECTS PEDESTRIAN?
+    lcd.clear();
+    lcd.print("Slowing Down...");
+  	delay(2000);				// WAITS 2 SECS
+    if (Serial.available() > 0) {		// Character available?
+      if(Serial.read()=='3'){       	// Read character
+      	pedestrian = false;
+      }
+  	}
+    if(pedestrian){	// STILL THERE?
         lcd.clear();
       	lcd.print("Braking...");	
-		delay(3000);
-    	pedestrian = false;
+      while (pedestrian){
+      	if (Serial.available() > 0) {		// Character available?
+          if(Serial.read()=='3'){       	// Read character
+      		pedestrian = false;
+          }
+        }
+      }
+    }
   }
   
   if(distance < 2){// DETECTS CAR WITH LIGHTS?
     lcd.clear();
     lcd.print("Vehicle Detected");
-    delay(2000);
-    if (Serial.available() > 0) {		// Character available?
-      if(Serial.read()=='2'){       	// Read character
-      	lights = false;
-      }
-  	}
-    if(lights){// DETECTS CAR WITH LIGHTS?
+    if(ligths){// DETECTS CAR WITH LIGHTS?
       lcd.clear();
-      lcd.print("Opening Gap...");
-      opened = true;
-      delay(2000);				// WAITS 2 SECS
+      if(!opened){		// No opened Gap
+      	lcd.print("Opening Gap...");
+      	opened = true;
+        delay(2000);				// WAITS 2 SECS
+      } 
       lcd.clear();
       lcd.print("Opened Gap");
-      delay(5000);
     }
   }
-  else{		// No vehicle
+  else if(!opened){		// No Gap
     lcd.clear();
     lcd.print("Happy Journey!");
   }
   
-  if(opened){ //Have open gap
+  if(opened && !ligths){ //Have open gap and No ligths
       lcd.clear();
       lcd.print("Closing Gap...");
       delay(2000);
