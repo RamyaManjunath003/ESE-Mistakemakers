@@ -1,0 +1,4 @@
+Feedback for your code:
+
+- A “Slowing Down” message must be implemented before the “Braking” message.
+-	“Braking” message must be shown until the camera stops detecting the pedestrian and not after only 3 seconds.
