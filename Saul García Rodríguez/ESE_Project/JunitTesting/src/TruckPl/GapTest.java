@@ -19,6 +19,6 @@ public class GapTest {
 	@Test
 	public void ClosingGap_Defect() {
 		result = obj.closeGap(true, true);
-		assertEquals("Closing Gap...", result);
+		assertNotEquals("Closing Gap...", result);
 	}
 }
