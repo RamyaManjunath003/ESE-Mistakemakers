@@ -18,7 +18,7 @@ public class PedestrianTest {
 	@Test
 	public void SlowingDown_Defect() {
 		result = obj.pedestrian(false, true);
-		assertEquals("Slowing Down...", result);
+		assertNotEquals("Slowing Down...", result);
 	}
 
 	// Pedestrian detected twice
@@ -30,7 +30,7 @@ public class PedestrianTest {
 	@Test
 	public void Braking_Defect() {
 		result = obj.pedestrian(false, false);
-		assertEquals("Braking...", result);
+		assertNotEquals("Braking...", result);
 	}
 	
 	// Pedestrian never detected
@@ -42,7 +42,7 @@ public class PedestrianTest {
 	@Test
 	public void HappyJourney_Defect() {
 		result = obj.pedestrian(true, true);
-		assertEquals("Happy Journey!", result);
+		assertNotEquals("Happy Journey!", result);
 	}
 
 }
