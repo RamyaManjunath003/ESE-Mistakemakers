@@ -21,7 +21,7 @@ public class UnitTesting {
 		if(distance < 2){					// VEHICLE DETECTED?
 			result = "Vehicle Detected";
 		    if(lights){						// VEHICLE WITH LIGHTS DETECTED?
-		    	if(!opened){				// N0 OPENED GAP?
+		    	if(!opened){					// N0 OPENED GAP?
 		    	  result = "Opening Gap...";
 		    	  opened = true;
 		    	}
