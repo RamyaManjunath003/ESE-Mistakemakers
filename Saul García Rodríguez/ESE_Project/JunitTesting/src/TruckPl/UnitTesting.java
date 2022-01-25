@@ -7,7 +7,7 @@ public class UnitTesting {
 		if(check1){							// DETECTS PEDESTRIAN?
 			result = "Slowing Down...";
 			if(check2){						// STILL THERE?
-		    	result = "Braking...";		// OPEN GAP
+		    	result = "Braking...";		
 		    }
 		}
 		else {
