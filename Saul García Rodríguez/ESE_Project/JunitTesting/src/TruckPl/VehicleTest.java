@@ -18,7 +18,7 @@ public class VehicleTest {
 	@Test
 	public void VehicleDetected_Defect() {
 		result = obj.vehicle(1.5, true, true);
-		assertEquals("Vehicle Detected", result);
+		assertNotEquals("Vehicle Detected", result);
 	}
 
 	// Vehicle detected with lights before opening a gap
@@ -30,7 +30,7 @@ public class VehicleTest {
 	@Test
 	public void OpeningGap_Defect() {
 		result = obj.vehicle(1.5, false, true);
-		assertEquals("Opening Gap...", result);
+		assertNotEquals("Opening Gap...", result);
 	}
 
 	// Vehicle detected with lights after opening a gap
@@ -42,7 +42,7 @@ public class VehicleTest {
 	@Test
 	public void OpenedGap_Defect() {
 		result = obj.vehicle(1.5, false, false);
-		assertEquals("Opened Gap", result);
+		assertNotEquals("Opened Gap", result);
 	}
 	
 	// No Vehicle detected and no gap
@@ -54,7 +54,7 @@ public class VehicleTest {
 	@Test
 	public void HappyJourney_Defect() {
 		result = obj.vehicle(2.5, true, true);
-		assertEquals("Happy Journey!", result);
+		assertNotEquals("Happy Journey!", result);
 	}
 	
 
