@@ -14,6 +14,7 @@ Simulation steps:
 	- Opening Gap...
 	- Opened Gap
 	- Once Opened Gap there are 2 possible options
+	
 	2.1. Vehicle detected turn off lights after opening a gap
 		- Sensor: dist<2, Serial Monitor: 2
 		- Closing Gap...
