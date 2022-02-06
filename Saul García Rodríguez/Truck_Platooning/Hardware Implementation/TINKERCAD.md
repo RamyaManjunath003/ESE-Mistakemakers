@@ -13,14 +13,15 @@ Simulation steps:
 	- Sensor: dist<2, Enter in Serial monitor: 0
 		- Opening Gap...
 		- Opened Gap
-	- Once Opened Gap there are 2 possible options
 	
 3.	Vehicle detected turn off lights after opening a gap
 	- Sensor: dist<2, Serial Monitor: 2
 		- Closing Gap...
 		- Vehicle detected
 
-4.	Vehicle detected dissapears after opening a gap
-	- Sensor: dist<2, Serial Monitor: 2
+4.	Repeat step 2.
+
+5.	Vehicle detected dissapears after opening a gap
+	- Sensor: dist>2, Serial Monitor: 2
 		- Closing Gap...
 		- Happy Journey!
