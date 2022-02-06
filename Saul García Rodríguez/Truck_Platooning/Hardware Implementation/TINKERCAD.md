@@ -7,7 +7,7 @@ Simulation steps:
 
 1.	Vehicle detected without lights (before opening a gap)	
 	- Sensor: dist<2
-     	- Vehicle detected
+	- 	Vehicle detected
 
 2.	Vehicle detected with lights (before opening a gap)
 	- Sensor: dist<2, Enter in Serial monitor: 0
