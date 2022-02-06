@@ -20,7 +20,7 @@ Simulation steps:
 	  - Closing Gap...
    	  - Vehicle detected
 
-4.    Vehicle detected dissapears after opening a gap
-        - Sensor: dist<2, Serial Monitor: 2
-        - Closing Gap...
-        - Happy Journey!
+     2.2. Vehicle detected dissapears after opening a gap
+          - Sensor: dist<2, Serial Monitor: 2
+          - Closing Gap...
+          - Happy Journey!
